@@ -27,6 +27,10 @@ ln -sf $DIR/editorconfig ~/.editorconfig
 vim -c 'PluginInstall' -c 'qa!'
 ### ---------------------------------------------
 
+### tmux-----------------------------------------
+ln -sf $DIR/tmux.conf ~/.tmux.conf
+### ---------------------------------------------
+
 ### guake----------------------------------------
 # sudo apt install -y guake
 # sudo ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/
