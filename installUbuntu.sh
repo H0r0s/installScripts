@@ -24,9 +24,7 @@ clear
 echo $ans
 
 sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade && sudo apt autoremove -y
-###############
-####Basics#####
-###############
+
 if [[ $ans == *"Syncthing"* ]]; then
 	$install curl -y
 	curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
@@ -56,61 +54,51 @@ if [[ $ans == *"Code"* ]]; then
 fi
 
 if [[ $ans == *"Latex"* ]]; then
-	$install texlive-latex-extra -y
-	$install latexmk texlive-lang-german -y
+	$install texlive-latex-extra
+	$install latexmk texlive-lang-german
 fi
 
 if [[ $ans == *"LibreOffice"* ]]; then
-	$install libreoffice -y
+	$install libreoffice
 fi
 
 if [[ $ans == *"VLC"* ]]; then
-	$install vlc -y
+	$install vlc
 fi
 
 if [[ $ans == *"Gimp"* ]]; then
-	$install gimp -y
+	$install gimp
 fi
 
 if [[ $ans == *"Inkscape"* ]]; then
-	$install inkscape -y
+	$install inkscape
 fi
 
 if [[ $ans == *"VPN"* ]]; then
-	$install network-manager-vpnc network-manager-vpnc-gnome vpnc -y
+	$install network-manager-vpnc network-manager-vpnc-gnome vpnc
 fi
 
 if [[ $ans == *"Tools"* ]];then
-	$install exfat-utils -y
+	$install exfat-utils ntfs-3g
 	$install vim tmux git
 	$install ranger htop psensor 
-	$install gparted -y
-	$install guake -y && sudo ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/
-	$install wormhole keychain -y
+	$install gparted 
+	$install guake  && sudo ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/
 fi
 
 if [[ $ans == *"CryFS"* ]]; then
-	$install cryfs -y
+	$install cryfs
 fi
 
 if [[ $ans == *"Cryptomator"* ]]; then
 	echo | sudo add-apt-repository ppa:sebastian-stenzel/cryptomator
 	sudo apt update
-	$install cryptomator -y
+	$install cryptomator
 fi
 
 if [[ $ans == *"Qemu"* ]]; then
-	$install qemu-kvm qemu virt-manager virt-viewer libvirt-bin -y
+	$install qemu-kvm qemu virt-manager virt-viewer libvirt-bin
 fi
-
-# if [[ $ans == *"Java"* ]]; then
-# sudo snap install intellij-idea-community --classic
-# $install apt install default-jdk -y
-# sudo add-apt-repository ppa:linuxuprising/java -y
-# sudo apt update
-# $install oracle-java12-installer -y
-# $install oracle-java12-set-default -y
-# fi
 
 if [[ $ans == *"Rat7"* ]]; then
 	if [ ! -d /etc/X11/xorg.conf.d ]; then

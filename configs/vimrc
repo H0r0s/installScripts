@@ -1,0 +1,76 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" Eigene Einstellungen
+set nu
+syntax on
+map <C-n> :NERDTreeToggle<CR>
+:set mouse=a
+
+
+" Search Options
+
+set hlsearch    " Enable search highlighting.
+set ignorecase  " Ignore case when searching.
+set incsearch   " Incremental search that shows partial matches.
+set smartcase   " Automatically switch search to case-sensitive when search query contains an uppercase letter.
+
+
+" let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+ Plugin 'VundleVim/Vundle.vim'
+
+" plugin on GitHub repo
+ Plugin 'tpope/vim-fugitive'
+
+" Pass the path to set the runtimepath properly.
+ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+" Coding
+"
+" Auto Klammern
+ Plugin 'jiangmiao/auto-pairs'
+
+" Einruecken
+ Plugin 'editorconfig/editorconfig-vim'
+
+" Layout
+" Plugin 'itchyny/lightline.vim'
+ Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim'}
+
+" syntastic
+ Plugin 'vim-syntastic/syntastic'
+" Nerdtree
+ Plugin 'scrooloose/nerdtree'
+
+ Plugin 'tpope/vim-surround'
+" Plugin 'valloric/youcompleteme'
+
+"All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
+" see :h vundle for more details or wiki for FAQ
+
+set laststatus=2
+" let g:lightline = {
+"   \     'active': {
+"   \         'left': [['mode', 'paste' ], ['readonly', 'filename', 'modified']],
+"   \         'right': [['lineinfo'], ['percent'], ['fileformat', 'fileencoding']]
+"   \     }
+"   \ }
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
