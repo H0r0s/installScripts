@@ -47,9 +47,8 @@ if [[ $ans == *"Thunderbird"* ]]; then
 fi
 
 if [[ $ans == *"Code"* ]]; then
-	wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -$install
-	sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-	sudo apt update
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EB3E94ADBE1229CF
+	sudo add-apt-repository -y "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 	$install code 
 fi
 
