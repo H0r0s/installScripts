@@ -35,15 +35,15 @@ if [[ $ans == *"Syncthing"* ]]; then
 fi
 
 if [[ $ans == *"Borg"* ]]; then
-	$install borgbackup -y
+	$install borgbackup 
 fi
 
 if [[ $ans == *"KeePassXC"* ]]; then
-	$install keepassxc -y
+	$install keepassxc 
 fi
 
 if [[ $ans == *"Thunderbird"* ]]; then
-	$install thunderbird -y
+	$install thunderbird
 fi
 
 if [[ $ans == *"Code"* ]]; then

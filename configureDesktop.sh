@@ -18,7 +18,7 @@ ln -sf $DIR/zshrc ~/.zshrc
 ### vim------------------------------------------
 sudo apt install -y vim 
 if [ ! -f "~/.vim/bundle/Vundle.vim" ] ; then
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
 ln -sf $DIR/vimrc ~/.vimrc
