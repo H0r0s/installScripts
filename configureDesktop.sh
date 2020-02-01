@@ -16,7 +16,7 @@ ln -sf $DIR/zshrc ~/.zshrc
 ### ---------------------------------------------
 
 ### vim------------------------------------------
-sudo apt install -y vim 
+sudo apt install -y vim
 if [ ! -f "~/.vim/bundle/Vundle.vim" ] ; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
@@ -32,8 +32,15 @@ ln -sf $DIR/tmux.conf ~/.tmux.conf
 ### ---------------------------------------------
 
 ### guake----------------------------------------
-# sudo apt install -y guake
-# sudo ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/
+if [[ $(lsb_release -rs) == "18.04" ]]; then
+  echo | sudo add-apt-repository ppa:linuxuprising/guake
+  sudo apt-get update
+fi
+sudo apt install -y guake
+sudo apt upgrade -y
+
+sudo ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/
+guake --restore-preferences $DIR/guakePrefs
 ### ---------------------------------------------
 
 echo -e "###########################################################################
